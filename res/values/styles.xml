@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -16,5 +16,24 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-
+    
+    <style name="ShortNumberInput">
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">10</item>
+        <item name="android:inputType">number</item>
+        <item name="android:hint">@string/hint_number</item>
+        <item name="android:minWidth">50sp</item>
+        <item name="android:maxWidth">200sp</item>
+    </style>
+    
+    <style name="SmallButton">
+        <item name="android:paddingLeft">15sp</item>
+        <item name="android:paddingRight">15sp</item>
+    </style>
+    
+    <style name="MediumButton">
+        <item name="android:paddingLeft">5sp</item>
+        <item name="android:paddingRight">5sp</item>
+    </style>
+    
 </resources>

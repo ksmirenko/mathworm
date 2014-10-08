@@ -2,9 +2,23 @@
 <resources>
 
     <string name="app_name">MathWorm</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_misc">Section 1</string>
+    <string name="title_primes">Section 2</string>
+    <string name="title_gcd">Section 3</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="input_a">a: </string>
+    <string name="input_b">b: </string>
+    <string name="input_c">c: </string>
+    <string name="input_m">m: </string>
+    <string name="input_n">n: </string>
+    <string name="hint_number">&lt;num&gt;</string>
+    
+    <string name="choose">C(n,k)</string>
+    <string name="convert">a[base b] -> X[base c]</string>
+    <string name="gcd">gcd</string>
+    <string name="isTriple">Pythagorean triple?</string>
+    <string name="lcm">lcm</string>
+    <string name="nFact">n!</string>
 
 </resources>
