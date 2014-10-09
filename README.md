@@ -14,6 +14,6 @@ Full functionality list:
 	 8) calculating the GCD of numbers
 	 9) calculating the LCM of numbers
 	10) solving Diophantine equations of type "ax + by = gcd(a,b)"
-	11) solving equations of type "ax = b (mod c)"
+	11) solving congruencies of type "ax ≡ b (mod c)"
 	12) finding one integer solution of Diophantine equations "ax + by = c"
 	13) finding all solutions of Diophantine equations "ax + by = c"  

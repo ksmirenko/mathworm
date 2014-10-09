@@ -42,6 +42,7 @@
         <item name="android:paddingRight">10sp</item>
         <item name="android:minHeight">20sp</item>
         <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
     </style>
     
     <color name="separator">#ff31b6e7</color>

@@ -29,7 +29,7 @@
             android:text="@string/input_b" />
 
         <EditText
-            android:id="@+id/frag_misc_editTextB"
+            android:id="@+id/frag_gcd_editTextB"
             style="@style/ShortNumberInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -68,9 +68,108 @@
         android:layout_marginRight="5dp"
         android:gravity="center" />
 
+    <!-- Separator -->
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/separator" />
 
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_a" />
+
+            <EditText
+                android:id="@+id/frag_gcd_editTextA2"
+                style="@style/ShortNumberInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_b" />
+
+            <EditText
+                android:id="@+id/frag_gcd_editTextB2"
+                style="@style/ShortNumberInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/input_c" />
+
+            <EditText
+                android:id="@+id/frag_gcd_editTextC2"
+                style="@style/ShortNumberInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/frag_gcd_buttonDiophGcd"
+                style="@style/MediumButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diophGcd" />
+
+            <Button
+                android:id="@+id/frag_gcd_buttonModuloDiv"
+                style="@style/MediumButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moduloDivision" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/frag_gcd_buttonDiophOne"
+                style="@style/MediumButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diophOne" />
+
+            <Button
+                android:id="@+id/frag_gcd_buttonDiophAll"
+                style="@style/MediumButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diophAll" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView android:id="@+id/frag_gcd_textViewAns2" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="2"
+        android:maxLines="2"
+        android:paddingLeft="30sp"
+        android:gravity="left"/>
 </LinearLayout>

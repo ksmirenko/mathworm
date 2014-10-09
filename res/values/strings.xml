@@ -15,9 +15,16 @@
     
     <string name="choose">C(n,k)</string>
     <string name="convert">a[base b] -> X[base c]</string>
+    <string name="diophAll">ax + by = c (ALL)</string>
+    <string name="diophGcd">ax + by = gcd(a,b)</string>
+    <string name="diophOne">ax + by = c (ONE)</string>
+    <string name="factorise">Factorise</string>
     <string name="gcd">gcd</string>
+    <string name="isPrime">Prime?</string>
     <string name="isTriple">Pythagorean triple?</string>
     <string name="lcm">lcm</string>
+    <string name="moduloDivision">ax ≡ b (mod c)</string>
     <string name="nFact">n!</string>
+    <string name="primesList">All primes up to n</string>
 
 </resources>
