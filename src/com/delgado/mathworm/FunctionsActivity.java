@@ -49,26 +49,47 @@ public class FunctionsActivity extends Activity {
 	mViewPager = (ViewPager) findViewById(R.id.pager);
 	mViewPager.setAdapter(mSectionsPagerAdapter);
 
-    }
+	// Set up tabs in the ActionBar
+	final ActionBar actionBar = getActionBar();
+	actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+	// Create a tab listener that is called when the user changes tabs.
+	ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+	    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+		// show the given tab
+		mViewPager.setCurrentItem(tab.getPosition(), true);
+	    }
 
-	// Inflate the menu; this adds items to the action bar if it is present.
-	getMenuInflater().inflate(R.menu.main, menu);
-	return true;
-    }
+	    public void onTabUnselected(ActionBar.Tab tab,
+		    FragmentTransaction ft) {
+		// hide the given tab
+	    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-	// Handle action bar item clicks here. The action bar will
-	// automatically handle clicks on the Home/Up button, so long
-	// as you specify a parent activity in AndroidManifest.xml.
-	int id = item.getItemId();
-	if (id == R.id.action_settings) {
-	    return true;
-	}
-	return super.onOptionsItemSelected(item);
+	    public void onTabReselected(ActionBar.Tab tab,
+		    FragmentTransaction ft) {
+		// probably ignore this event
+	    }
+	};
+
+	// Add tabs
+	actionBar.addTab(actionBar.newTab().setText(R.string.title_misc)
+		.setTabListener(tabListener));
+	actionBar.addTab(actionBar.newTab().setText(R.string.title_primes)
+		.setTabListener(tabListener));
+	actionBar.addTab(actionBar.newTab().setText(R.string.title_gcd)
+		.setTabListener(tabListener));
+
+	// Sync tabs and pages
+	mViewPager
+		.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+		    @Override
+		    public void onPageSelected(int position) {
+			// When swiping between pages, select the
+			// corresponding tab.
+			actionBar.setSelectedNavigationItem(position);
+		    }
+		});
+
     }
 
     /**

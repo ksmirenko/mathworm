@@ -32,8 +32,18 @@
     </style>
     
     <style name="MediumButton">
-        <item name="android:paddingLeft">5sp</item>
-        <item name="android:paddingRight">5sp</item>
+        <item name="android:paddingLeft">10sp</item>
+        <item name="android:paddingRight">10sp</item>
     </style>
+    
+    <style name="SingeLineOutput">
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">10sp</item>
+        <item name="android:paddingRight">10sp</item>
+        <item name="android:minHeight">20sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    
+    <color name="separator">#ff31b6e7</color>
     
 </resources>

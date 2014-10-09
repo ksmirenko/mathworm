@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <TextView
@@ -23,9 +24,16 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-    </ScrollView>
+        <TextView
+        android:id="@+id/frag_primes_textViewAns1"
+        style="@style/SingeLineOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+    </HorizontalScrollView>
 
 </LinearLayout>
