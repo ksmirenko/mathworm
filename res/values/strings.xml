@@ -13,7 +13,7 @@
     <string name="input_n">n: </string>
     <string name="hint_number">&lt;num&gt;</string>
     
-    <string name="choose">C(n,k)</string>
+    <string name="choose">C(n,m)</string>
     <string name="convert">a[base b] -> X[base c]</string>
     <string name="diophAll">ax + by = c (ALL)</string>
     <string name="diophGcd">ax + by = gcd(a,b)</string>
@@ -27,4 +27,8 @@
     <string name="nFact">n!</string>
     <string name="primesList">All primes up to n</string>
 
+    <string name="ans_isTriple">Is a Pythagorean triple</string>
+    <string name="ans_isNotTriple">Is not a Pythagorean triple</string>
+    <string name="ans_error">Error; check input</string>
+    
 </resources>

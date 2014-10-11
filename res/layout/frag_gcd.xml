@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO: finish GCD fragment -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -165,11 +164,13 @@
         </TableRow>
     </TableLayout>
 
-    <TextView android:id="@+id/frag_gcd_textViewAns2" 
+    <TextView
+        android:id="@+id/frag_gcd_textViewAns2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minLines="2"
+        android:gravity="left"
         android:maxLines="2"
-        android:paddingLeft="30sp"
-        android:gravity="left"/>
+        android:minLines="2"
+        android:paddingLeft="30sp" />
+
 </LinearLayout>

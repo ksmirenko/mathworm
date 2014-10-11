@@ -50,6 +50,7 @@ public class MathLogic {
      * @return The number in another numeric system.
      */
     public static String convertNumber(long number, int baseIn, int baseOut) {
+	// FIXME: check validity of input number (digits < base)
 	return convertFromDecimal(
 		convertToDecimal(Long.toString(number), baseIn), baseOut);
     }
@@ -77,6 +78,7 @@ public class MathLogic {
      * @return The factorial.
      */
     public static long factorial(long a) {
+	// FIXME: check overflow
 	long ans = 1;
 	for (long i = a; i > 1; --i) {
 	    ans *= i;
