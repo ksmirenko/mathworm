@@ -17,7 +17,7 @@ public class MathLogic {
      */
     public static final MathLogic INSTANCE = new MathLogic();
 
-    private final int MAX = (int) (1e6 + 1);
+    private final int MAX = (int) (1e6);
     private List<Integer> primesList;
 
     /**
@@ -238,7 +238,7 @@ public class MathLogic {
 	List<Pair<Integer, Integer>> factorisation = factorise(num);
 	String s = "";
 	for (Pair<Integer, Integer> elem : factorisation) {
-	    s = s + elem.getL() + "^" + elem.getR() + " + ";
+	    s = s + elem.getL() + "^" + elem.getR() + " * ";
 	}
 	return s.substring(0, s.length() - 3);
     }

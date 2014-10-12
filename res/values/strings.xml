@@ -31,5 +31,7 @@
     <string name="ans_isNotTriple">Is not a Pythagorean triple</string>
     <string name="ans_errorNumberFormat">Error; check input</string>
     <string name="ans_errorNumberTooBig">The input number is too big.</string>
+    <string name="ans_isPrime">Prime</string>
+    <string name="ans_isNotPrime">Not prime</string>
     
 </resources>
