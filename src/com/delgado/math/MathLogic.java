@@ -50,9 +50,12 @@ public class MathLogic {
      * @return The number in another numeric system.
      */
     public static String convertNumber(long number, int baseIn, int baseOut) {
-	// FIXME: check validity of input number (digits < base)
-	return convertFromDecimal(
-		convertToDecimal(Long.toString(number), baseIn), baseOut);
+	try {
+	    return convertFromDecimal(
+		    convertToDecimal(Long.toString(number), baseIn), baseOut);
+	} catch (Exception e) {
+	    throw new NumberFormatException();
+	}
     }
 
     /**
@@ -67,23 +70,11 @@ public class MathLogic {
      * @return The number in another numeric system.
      */
     public static String convertNumber(String number, int baseIn, int baseOut) {
-	return convertFromDecimal(convertToDecimal(number, baseIn), baseOut);
-    }
-
-    /**
-     * Calculates the factorial.
-     * 
-     * @param a
-     *            The number.
-     * @return The factorial.
-     */
-    public static long factorial(long a) {
-	// FIXME: check overflow
-	long ans = 1;
-	for (long i = a; i > 1; --i) {
-	    ans *= i;
+	try {
+	    return convertFromDecimal(convertToDecimal(number, baseIn), baseOut);
+	} catch (Exception e) {
+	    throw new NumberFormatException();
 	}
-	return ans;
     }
 
     /**
@@ -139,9 +130,44 @@ public class MathLogic {
 		output1.get3());
 	return output;
     }
-    
+
+    /**
+     * Calculates the factorial.
+     * 
+     * @param a
+     *            The number.
+     * @return The factorial or -1 if there was an overflow.
+     */
+    public static long factorial(long a) {
+	long ans = 1;
+	for (long i = a; i > 1; --i) {
+	    ans *= i;
+	    if (ans < 0)
+		return -1;
+	}
+	return ans;
+    }
+
+    /**
+     * Calculates the factorial.
+     * 
+     * @param a
+     *            The number.
+     * @param m
+     *            The modulo by which the factorial is calculated
+     * @return The factorial.
+     */
+    public static long factorial(long a, long m) {
+	long ans = 1;
+	for (long i = a; i > 1; --i) {
+	    ans = ans * i % m;
+	}
+	return ans;
+    }
+
     /**
      * Provides a list of prime numbers.
+     * 
      * @return A list o prime numbers.
      */
     public List<Integer> getPrimesList() {
@@ -355,19 +381,24 @@ public class MathLogic {
     private static long convertToDecimal(String num, int baseIn) {
 	if (baseIn == 10)
 	    return Long.parseLong(num);
+	if ((baseIn < 2) || (baseIn > 16))
+	    throw new NumberFormatException();
 	String d = "!0123456789ABCDEF";
 	long m = 0;
 	int start = 0;
 	int pos = 0;
-	while (num.charAt(0) == '0')
+	while (num.charAt(start) == '0')
 	    ++start;
 	for (int i = start; i < num.length(); i++) {
-	    for (int j = 0; j < d.length(); j++) {
+	    pos = -1;
+	    for (int j = 0; j <= baseIn; j++) {
 		if (d.charAt(j) == num.charAt(i)) {
 		    pos = j;
 		    break;
 		}
 	    }
+	    if (pos < 0)
+		throw new NumberFormatException();
 	    m = m * baseIn + pos - 1;
 	}
 	return m;

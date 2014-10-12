@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MiscFragment extends Fragment {
     private EditText inputN, inputM;
@@ -52,9 +53,16 @@ public class MiscFragment extends Fragment {
 	    try {
 		String sN = inputN.getText().toString();
 		long n = Long.parseLong(sN);
-		output1.setText(String.valueOf(MathLogic.factorial(n)));
-	    } catch (Exception e) {
-		output1.setText(R.string.ans_error);
+		String ans = String.valueOf(MathLogic.factorial(n));
+		if (ans.compareTo("-1") != 0)
+		    output1.setText(ans);
+		else
+		    output1.setText(R.string.ans_errorNumberTooBig);
+	    } catch (NumberFormatException e) {
+		output1.setText(R.string.ans_errorNumberFormat);
+	    }
+	    catch (Exception e) {
+		Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 	    }
 	}
     };
@@ -66,9 +74,12 @@ public class MiscFragment extends Fragment {
 		String sN = inputN.getText().toString(), sM = inputM.getText()
 			.toString();
 		long n = Long.parseLong(sN), m = Long.parseLong(sM);
-		output1.setText(String.valueOf(MathLogic.choose(n, m)));
-	    } catch (Exception e) {
-		output1.setText(R.string.ans_error);
+		output1.setText(MathLogic.choose(n, m).toString());
+	    } catch (NumberFormatException e) {
+		output1.setText(R.string.ans_errorNumberFormat);
+	    }
+	    catch (Exception e) {
+		Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 	    }
 	}
     };
@@ -84,8 +95,11 @@ public class MiscFragment extends Fragment {
 		    output2.setText(R.string.ans_isTriple);
 		else
 		    output2.setText(R.string.ans_isNotTriple);
-	    } catch (Exception e) {
-		output2.setText(R.string.ans_error);
+	    } catch (NumberFormatException e) {
+		output2.setText(R.string.ans_errorNumberFormat);
+	    }
+	    catch (Exception e) {
+		Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 	    }
 	}
     };
@@ -98,11 +112,12 @@ public class MiscFragment extends Fragment {
 		int b = Integer.parseInt(inputB.getText().toString());
 		int c = Integer.parseInt(inputC.getText().toString());
 		output2.setText(MathLogic.convertNumber(a, b, c));
-	    } catch (Exception e) {
-		output2.setText(R.string.ans_error);
+	    } catch (NumberFormatException e) {
+		output2.setText(R.string.ans_errorNumberFormat);
+	    }
+	    catch (Exception e) {
+		Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 	    }
 	}
     };
-
-    // TODO: implement button functions
 }
