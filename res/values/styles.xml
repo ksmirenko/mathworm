@@ -20,7 +20,7 @@
     <style name="ShortNumberInput">
         <item name="android:maxLines">1</item>
         <item name="android:maxLength">10</item>
-        <item name="android:inputType">number</item>
+        <item name="android:inputType">numberSigned</item>
         <item name="android:hint">@string/hint_number</item>
         <item name="android:minWidth">50sp</item>
         <item name="android:maxWidth">200sp</item>

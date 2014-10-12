@@ -33,5 +33,6 @@
     <string name="ans_errorNumberTooBig">The input number is too big.</string>
     <string name="ans_isPrime">Prime</string>
     <string name="ans_isNotPrime">Not prime</string>
+    <string name="ans_noSolutions">There are no solutions.</string>
     
 </resources>

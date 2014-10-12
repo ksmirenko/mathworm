@@ -87,7 +87,7 @@ public class MathLogic {
      * @return The GCD.
      */
     public static long gcd(long a, long b) {
-	return (b != 0 ? gcd(b, a % b) : Math.abs(a));
+	return (b != 0 ? gcd(Math.abs(b), Math.abs(a % b)) : Math.abs(a));
     }
 
     /**
@@ -253,7 +253,7 @@ public class MathLogic {
      * @return The LCM.
      */
     public static long lcm(long a, long b) {
-	return (a / gcd(a, b) * b);
+	return Math.abs(a / gcd(a, b) * b);
     }
 
     /**
